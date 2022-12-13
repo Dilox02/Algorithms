@@ -1,6 +1,6 @@
 public class Inserctionsort{
     //O(n^2) 
-    //prendiamo il (k+1)esimo elementonell'arrat e lo inseriamo nella sua posizione corretta rispetto ai primi k elementi già ordinati
+    //prendiamo il (k+1)esimo elemento nell'array e lo inseriamo nella sua posizione corretta rispetto ai primi k elementi già ordinati
     public static void main(String[] args) {
         int[] nums= {7,2,4,5,3,1};
         print(nums);
