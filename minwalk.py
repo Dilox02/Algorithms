@@ -1,4 +1,3 @@
-
 #minwalk v1 
 
 import numpy as np
@@ -29,22 +28,29 @@ def minWalk(array,n):
     #find minwalk
     array=[0 for i in range(n)]
     
-    for j in range(n):
-        
-        array[j]=(min( [Partialsums[i][j] for i in range(0,n)]))
+    
+    minus=  min([Partialsums[i][n-1] for i in range(0,n)])
+    
+    mins_index=[]
+    for i in range(0,n):
+        if Partialsums[i][n-1]==minus:
+            mins_index.append(i)
+   
+    print(f"minus:{minus}, indexes:{mins_index}")
+    
 
     
     context={}
     context["matrix"]=Partialsums
-    context["minwalk"]=array
+    #context["minwalk"]=array
     return context
 
-rows=3
-columns=3
+rows=10
+columns=10
 array=np.random.randint(0, 10, (rows, columns))
 print(array,"\n")
 
-a=minWalk(array,3)
+a=minWalk(array,10)
 
 print(a["matrix"],"\n")
-print(a["minwalk"],"\n")
+#print(a["minwalk"],"\n")
